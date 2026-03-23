@@ -1,6 +1,6 @@
 {
     "name": "ai-friendly-web-design-skill",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Claude Code skill for AI-accessible web design — semantic HTML, ARIA, stable locators, and agent-friendly UI patterns.",
     "keywords": [
         "claude",
