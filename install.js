@@ -12,12 +12,16 @@ const SKILLS = {
 };
 
 const args = process.argv.slice(2);
+const isLocal = args.includes('--local');
+const isForce = args.includes('--force');
 
-// Only one version available
-const toInstall = Object.keys(SKILLS);
+// --local: install to ./mnt/skills/user/ (current project)
+// default: install to ~/.claude/skills/ (global)
+const skillsDir = isLocal
+    ? path.join(process.cwd(), 'mnt', 'skills', 'user')
+    : path.join(os.homedir(), '.claude', 'skills');
 
-// Target: ~/.claude/skills/
-const skillsDir = path.join(os.homedir(), '.claude', 'skills');
+const modeLabel = isLocal ? 'local project' : 'global (~/.claude/skills)';
 
 function copyDir(src, dest) {
     fs.mkdirSync(dest, { recursive: true });
@@ -32,15 +36,15 @@ function copyDir(src, dest) {
     }
 }
 
-console.log('\n🤖 Installing AI-Friendly Web Design skill for Claude Code...\n');
+console.log(`\n🤖 Installing AI-Friendly Web Design skill for Claude Code (${modeLabel})...\n`);
 
-for (const skill of toInstall) {
+for (const [skill, label] of Object.entries(SKILLS)) {
     const src = path.join(__dirname, 'skills', skill);
     const dest = path.join(skillsDir, skill);
 
     if (fs.existsSync(dest)) {
         console.log(`⚠️  ${skill} already exists at ${dest}`);
-        if (!args.includes('--force')) {
+        if (!isForce) {
             console.log(`   Skipping. Use --force to overwrite.\n`);
             continue;
         }
@@ -48,7 +52,7 @@ for (const skill of toInstall) {
     }
 
     copyDir(src, dest);
-    console.log(`✅ Installed: ${skill} (${SKILLS[skill]})`);
+    console.log(`✅ Installed: ${skill} (${label})`);
     console.log(`   → ${dest}\n`);
 }
 

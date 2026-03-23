@@ -18,11 +18,11 @@
     "homepage": "https://github.com/ianho7/ai-friendly-web-design-skill",
     "repository": {
         "type": "git",
-        "url": "https://github.com/ianho7/ai-friendly-web-design-skill"
+        "url": "git+https://github.com/ianho7/ai-friendly-web-design-skill.git"
     },
     "type": "module",
     "bin": {
-        "ai-friendly-web-design-skill": "./install.js"
+        "ai-friendly-web-design-skill": "install.js"
     },
     "files": [
         "install.js",
