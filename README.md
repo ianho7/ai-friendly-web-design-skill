@@ -1,5 +1,6 @@
 # AI-Friendly Web Design — Claude Code Skill
 
+
 A Claude Code Skill that helps you build web interfaces friendly to both AI agents and human users — covering semantic HTML, ARIA attributes, stable locators, form best practices, and more.
 
 > Original post: [@karminski-牙医](https://weibo.com/2169039837/QxmP8bEIS) · Compiled by: [@ianho7](https://github.com/ianho7)
@@ -21,17 +22,36 @@ Claude will follow the 14-principle checklist and flag issues during code review
 
 ## Installation
 
-### Option A: Clone directly into your skills directory
+### Option A: npx (recommended)
+
+```bash
+# Install globally — available to all your Claude Code projects
+npx ai-friendly-web-design-skill
+
+# Install locally — only for the current project
+npx ai-friendly-web-design-skill --local
+
+# Force overwrite an existing installation
+npx ai-friendly-web-design-skill --force
+```
+
+| Flag | Install path |
+|------|-------------|
+| _(none)_ | `~/.claude/skills/` (global, all projects) |
+| `--local` | `.claude/skills/` in current project |
+| `--force` | Overwrite if already installed |
+
+### Option B: Clone directly into your skills directory
 
 ```bash
 git clone https://github.com/ianho7/ai-friendly-web-design-skill \
   ~/.claude/skills/ai-friendly-web-design
 ```
 
-### Option B: Manual
+### Option C: Manual
 
 1. Download or clone this repo
-2. Copy the folder into your Claude Code skills directory:
+2. Copy the `skills/ai-friendly-web-design/` folder into your Claude Code skills directory:
    - macOS/Linux: `~/.claude/skills/`
    - Windows: `%USERPROFILE%\.claude\skills\`
 
