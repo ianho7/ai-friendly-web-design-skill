@@ -18,7 +18,7 @@ const isForce = args.includes('--force');
 // --local: install to ./mnt/skills/user/ (current project)
 // default: install to ~/.claude/skills/ (global)
 const skillsDir = isLocal
-    ? path.join(process.cwd(), 'mnt', 'skills', 'user')
+    ? path.join(process.cwd(), '.claude', 'skills')
     : path.join(os.homedir(), '.claude', 'skills');
 
 const modeLabel = isLocal ? 'local project' : 'global (~/.claude/skills)';
