@@ -1,0 +1,34 @@
+{
+    "name": "ai-friendly-web-design-skill",
+    "version": "1.0.0",
+    "description": "Claude Code skill for AI-accessible web design — semantic HTML, ARIA, stable locators, and agent-friendly UI patterns.",
+    "keywords": [
+        "claude",
+        "claude-code",
+        "skill",
+        "accessibility",
+        "a11y",
+        "ai-agent",
+        "web-design",
+        "aria",
+        "playwright"
+    ],
+    "author": "ianho7 (https://github.com/ianho7)",
+    "license": "CC-BY-4.0",
+    "homepage": "https://github.com/ianho7/ai-friendly-web-design-skill",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ianho7/ai-friendly-web-design-skill"
+    },
+    "type": "module",
+    "bin": {
+        "ai-friendly-web-design-skill": "./install.js"
+    },
+    "files": [
+        "install.js",
+        "skills/"
+    ],
+    "engines": {
+        "node": ">=18"
+    }
+}
